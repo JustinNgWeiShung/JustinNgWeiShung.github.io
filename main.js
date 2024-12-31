@@ -71,15 +71,6 @@ const cellShaderModule = device.createShaderModule({
     `
 });
 
-const bindGroup = device.createBindGroup({
-    label: "Cell renderer bind group",
-    layout: cellPipeline.getBindGroupLayout(0),
-    entries: [{
-        binding: 0,
-        resource: { buffer: uniformBuffer }
-    }],
-});  
-
 const cellPipeline = device.createRenderPipeline({
     label: "Cell pipeline",
     layout: "auto",
@@ -96,6 +87,15 @@ const cellPipeline = device.createRenderPipeline({
         }]
     }
 });
+
+const bindGroup = device.createBindGroup({
+    label: "Cell renderer bind group",
+    layout: cellPipeline.getBindGroupLayout(0),
+    entries: [{
+        binding: 0,
+        resource: { buffer: uniformBuffer }
+    }],
+});  
 
 const encoder = device.createCommandEncoder();
 const pass = encoder.beginRenderPass({

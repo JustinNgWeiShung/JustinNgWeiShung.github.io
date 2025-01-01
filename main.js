@@ -61,7 +61,7 @@ const cellShaderModule = device.createShaderModule({
 
         @vertex
         fn vertexMain(@location(0) pos: vec2f, @builtin(instance_index) instance:u32) -> @builtin(position) vec4f {
-            let i - f32(instance); // Save the instance as a float
+            let i = f32(instance); // Save the instance as a float
             let cell = vec2f(i%grid.x,floor(i/grid.x)); // Cell(1,1)
             let cellOffset = cell/grid * 2; //compute the offset to cell
             let gridPos = (pos+1)/grid - 1 + cellOffset;

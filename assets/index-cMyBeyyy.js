@@ -702,7 +702,7 @@ ${t}
             uv.x *= props.width / props.height;
 
             var d = distance(uv,vec2f(0));
-            d = sin(d*30 +t*4);
+            d = sin(d*20 - t*4) + sin(d*25 + t*4);
             d = smoothstep(0.7, 0.71, d);
 
             return vec4f(d,d,d,1);

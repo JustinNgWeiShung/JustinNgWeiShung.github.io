@@ -21,8 +21,8 @@ fn fmod(x:f32, y:f32) -> f32 {
 @fragment
 fn fragment_main(fragData: VertexOut) -> @location(0) vec4<f32>
 {
-    let TAU:f32 = 3.142;
-    let PI:f32 = 6.284;
+    const PI:f32 = 3.1415926535897932385;
+    const TAU:f32 = 6.284;
     let t = props.time;
 
     //let r:f32 = length(4*sin(t) - fragData.texcoord);
